@@ -38,14 +38,14 @@ AST = (function ( A ) {
 		regexHeader			= />\*{3} .+ \*{3}$/i,
 		regexShortLink 		= /c\/([^/]+)\/.+/g,
 
-		storyPointDecimals 	= 1,
+		storyPointDecimals 	= 0,
 
 		bodyColor 			= false,
 		bodyWidth           = 0,
 		cssStoryPoints 		= '',
 
 		runTimer 			= false,
-		runTimerInterval 	= 5000,
+		runTimerInterval 	= 15000,
 		runTimerChecksum 	= 0,
 
 		currentListElement 	= false,
@@ -229,9 +229,9 @@ AST = (function ( A ) {
 						currentCardElement.prepend( '<div class="scrum-card-progress' + cssStoryPoints + '" style="background-color:' + bodyColor + ';width:' + ( bodyWidth <= 100 ? bodyWidth : 100 ) + '%"></div>');
 
 						// Increase card font size depending on its SP
-						$( currentCardElement[0] )
-							.css('font-size', ( (currentCardTotal < 8) ? (90 + (5*currentCardTotal) ) : 130 ) + '%' )
-							.css('line-height', '1.2em');
+						//$( currentCardElement[0] )
+						//	.css('font-size', ( (currentCardTotal < 8) ? (90 + (5*currentCardTotal) ) : 130 ) + '%' )
+						//	.css('line-height', '1.2em');
 					}
 
 
@@ -316,7 +316,9 @@ AST = (function ( A ) {
 		 */
 		var _finishHeader = function()
 		{
-			$( currentHeaderElement.find('.list-card-title')[0] ).prepend( '<small class="scrum-card-points'+((currentHeaderDone>currentHeaderTotal)?' overrun':'')+'"><span class="scrum-light">' + currentHeaderDone.toFixed( storyPointDecimals ) + '/</span>' + currentHeaderTotal.toFixed( storyPointDecimals ) + '</small>' );
+			$( currentHeaderElement.find('.list-card-title')[0] )
+				.prepend( '<small class="scrum-card-points'+((currentHeaderDone>currentHeaderTotal)?' overrun':'')+'"><span class="scrum-light">' + currentHeaderDone.toFixed( storyPointDecimals ) + '/</span>' + currentHeaderTotal.toFixed( storyPointDecimals ) + '</small>' );
+			
 			currentHeaderDone = currentHeaderTotal = 0;
 		};
 

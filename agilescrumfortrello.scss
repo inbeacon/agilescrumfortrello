@@ -19,8 +19,8 @@
 
 */
 $color-primary: rgb(55, 158, 90);
-$color-overrun: #5C001C;
-$color-perfect: #274D01;
+$color-overrun: #ff94bc;
+$color-perfect: #abeddb;
 $color-grey: #666;
 
 $border-radius: 3px;
@@ -34,11 +34,12 @@ $border-radius: 3px;
 	position: absolute;
 	top: 6px;
 	right: 29px;
+	background-color: #005500;	
 	display: inline-block;
-	padding: 2px;
-	background: #e3e3e3;
+	padding: 2px 2px 2px 16px;
 	border-radius: $border-radius;
-	color: $color-grey;
+	color: #fff;
+	font-size: 14px;
 	line-height: 1em;
 }
 .scrum-list-progress {
@@ -47,7 +48,7 @@ $border-radius: 3px;
 	left: 0;
 	height: 100%;
 	background: $color-primary;
-	opacity: 0.3;
+	opacity: 0.15;
 	z-index: 0;
 }
 .scrum-card-progress {
@@ -56,7 +57,7 @@ $border-radius: 3px;
 	left: 0;
 	height: 100%;
 	background: $color-primary;
-	opacity: 0.2;
+	opacity: 0.1;
 	z-index: -1;
 
 	&.overrun {
@@ -74,14 +75,15 @@ $border-radius: 3px;
 }
 .scrum-card-points {
 	position: absolute;
-	top: 0;
+	top: 4px;
+	background-color:#554597;
 	right: 3px;
 	display: inline-block;
-	padding: 2px;
+	padding: 2px 2px 2px 16px;
 	line-height: 1em;
 	vertical-align: middle;
 	border-radius: $border-radius;
-	color: #555;
+	color: #fff;
 	font-size: 12px;
 	text-shadow: 0 0 2px white;
 	opacity: 0.6;
